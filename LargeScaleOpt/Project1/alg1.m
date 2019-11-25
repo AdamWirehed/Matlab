@@ -2,7 +2,6 @@ close all;
 
 %%
 
-run p11;
 notDone = 0;
 
 while notDone == 0
@@ -118,10 +117,7 @@ while notDone == 0
 
     else
         fprintf("Primal feasible for %d contact pairs! \n", length(okcom));
-        
-        if length(okcom) > 11
-            notDone = 1;
-        end
+        notDone = 1;
     end
 end
 
