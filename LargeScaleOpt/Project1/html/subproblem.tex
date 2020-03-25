@@ -1,0 +1,43 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+   
+    \begin{verbatim}
+function [newnl, okcom] = subproblem(dimX, dimY, nl, u, k, com)
+
+newnl = [];
+okcom = [];
+
+last = 0;
+    for i = 1 : k;
+        first = last+1;
+        slask = find(nl(last+1:length(nl)) == com(i,1)); last = slask(1)+first-1;
+        if (sum(u(nl(first:last))) < 1)
+                okcom = [okcom i]; newnl = [newnl; nl(first:last)];
+        end
+    end
+
+end
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}Not enough input arguments.
+
+Error in subproblem (line 7)
+    for i = 1 : k;
+\end{verbatim} \color{black}
+    
+
+
+\end{document}
+    

@@ -40,8 +40,8 @@ com = [
     
 k = length(com);
        
-% [uv,~,idx] = unique(com(:,2));
-% n = accumarray(idx(:),1);
-% [uv, n];
-% 
-% com(:,2) = com(:,2) + dimX * (dimY - 1);
+[uv,~,idx] = unique(com(:,2));
+n = accumarray(idx(:),1);
+[uv, n];
+
+com(:,2) = com(:,2) + dimX * (dimY - 1);

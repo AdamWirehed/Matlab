@@ -1,8 +1,23 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+    
+    \begin{verbatim}
 close all;
 clear all;
-
-%%
-
+\end{verbatim}
+\begin{verbatim}
 run p11.m;
 notDone = 0;
 
@@ -14,7 +29,6 @@ u = 1/n*ones(n, 1);
 iter = 1000;
 
 h = zeros(1, iter);
-prim = zeros(1, iter);
 xBar = zeros(n, k);
 a = 0;
 aBar = 0;
@@ -86,9 +100,9 @@ for t = 1:iter
     end
 
     lastnl = [];
-    new_w = sum(xBar, 2);  
+    new_w = sum(xBar, 2);
 
-    % Creating the new weight matrix based on xBar 
+    % Creating the new weight matrix based on xBar
     ergod_w = xBar;
     ergod_w = ergod_w + epsi;
     ergod_w = 1./ergod_w;
@@ -121,8 +135,6 @@ for t = 1:iter
 
     [v, w] = unique( newnl, 'stable' );
     dix = setdiff( 1:numel(newnl), w );
-    
-    prim(t) = cMax;
 
     if ~isempty(dix)
         %fprintf("Not primal feasible for %d contact pairs! \n", length(okcom));
@@ -150,10 +162,14 @@ figure;
 visagrid(dimX, dimY, nlFeas, newOkCom, uFeas, 25);
 
 figure;
-hold on
 plot(1:iter, h, '.');
-plot(1:iter, prim, '-');
-axis auto;
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}Primal feasible for 8 contact pairs! 
+Primal feasible for 11 contact pairs! 
+Primal feasible for 15 contact pairs! 
+\end{verbatim} \color{black}
 
 
-
+\end{document}
+    
