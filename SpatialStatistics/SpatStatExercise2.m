@@ -51,5 +51,19 @@ legend("Gaussian", "Matern: \sigma = 1, \kappa = 2, \nu = 3/5")
 
 %%
 
-S = meshgrid()
+s = linspace(0, 10, 100);
+
+[X, Y] = meshgrid(s);
+D = squareform(pdist([X, Y]));
+figGussField = figure(5);
+mu = 1;
+mat = matern_covariance(D, 1, 1, mu);
+figMat = figure(5);
+imagesc(reshape(mat, [100 100]));
+
+
+figSpher = figure(6);
+spher = spherical_covariance(D, 10, 5);
+imagesc(reshape(spher, [100 100]));
+
 
