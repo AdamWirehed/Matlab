@@ -1,4 +1,5 @@
 close all
+clear all
 
 %%
 h = linspace(0, 10, 1e3);
