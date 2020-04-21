@@ -5,23 +5,24 @@ clear all
 n = 50;
 N = 500;
 sLine = linspace(0, 1, n);
-beta1 = 1;
-beta2 = 0.5;
+beta1 = 1.5;
+beta2 = 2;
 
 %% 2
-[X, Y] = meshgrid(sLine, sLine);
+[X, Y] = meshgrid(sLine, s);
 
 ind = randperm(n*n);
 ind_o = ind(1:N);
-loc = [X(:), Y(:)];
+loc = [X(ind); Y(ind)]';
+sigma = 0.5;
 
 D = squareform(pdist(loc));
 
 Z = chol(matern_covariance(D, 1, 1, 0.5))'*randn(n*n,1);
-xFunc = 1*beta1 + X(:)*beta2 + Z;
+xFunc = 1*beta1 + X(ind)*beta2 + Z';
 yResp = zeros(1, n*n);
 
-yResp(:) = xFunc + randn(n*n, 1);
+yResp(:) = xFunc + randn(1, n*n);
 
 fig1 = figure(1);
 imagesc(reshape(xFunc, [50 50]));

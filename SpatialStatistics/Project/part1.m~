@@ -1,6 +1,0 @@
-close all
-clear all
-
-%% 1
-path = get_full_filename()
-titan = imread('../TMS016_data/titan.jpg');
