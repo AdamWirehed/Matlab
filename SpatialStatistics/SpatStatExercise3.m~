@@ -5,21 +5,20 @@ clear all
 n = 50;
 N = 500;
 sLine = linspace(0, 1, n);
-beta1 = 1.5;
-beta2 = 2;
+beta1 = 1;
+beta2 = 0.5;
 
 %% 2
-[X, Y] = meshgrid(sLine, s);
+[X, Y] = meshgrid(sLine, sLine);
 
 ind = randperm(n*n);
 ind_o = ind(1:N);
-loc = [X(ind); Y(ind)]';
-sigma = 0.5;
+loc = [X(:), Y(:)];
 
 D = squareform(pdist(loc));
 
 Z = chol(matern_covariance(D, 1, 1, 0.5))'*randn(n*n,1);
-xFunc = 1*beta1 + X(ind)*beta2 + Z';
+xFunc = (1*beta1 + X(:)*beta2 + Z)';
 yResp = zeros(1, n*n);
 
 yResp(:) = xFunc + randn(1, n*n);
@@ -31,16 +30,9 @@ scatter(xFunc, yResp, 100, 'f', 'r');
 
 %% 3
 
-mu = mean(yResp);
-e = yResp - mu;
-pFit = polyfit(xFunc(loc_o), yResp, 1);
+beta = mldivide([ones(N, 1), xFunc(ind_o)'], yResp(ind_o)');
+xObs = xFunc(ind_o);
 
-D = xFunc(loc_o) - yResp;
-binEst = emp_variogram(D, sLine, N);
-
-
-
-
-
-
+H = xObs*inv(xObs'*xObs)*xObs';
+r = (1-H)*yResp(ind_o);
 

@@ -18,10 +18,10 @@ loc = [X(:), Y(:)];
 D = squareform(pdist(loc));
 
 Z = chol(matern_covariance(D, 1, 1, 0.5))'*randn(n*n,1);
-xFunc = 1*beta1 + X(:)*beta2 + Z;
+xFunc = (1*beta1 + X(:)*beta2 + Z)';
 yResp = zeros(1, n*n);
 
-yResp(:) = xFunc + randn(n*n, 1);
+yResp(:) = xFunc + randn(1, n*n);
 
 fig1 = figure(1);
 imagesc(reshape(xFunc, [50 50]));
@@ -30,16 +30,13 @@ scatter(xFunc, yResp, 100, 'f', 'r');
 
 %% 3
 
-mu = mean(yResp);
-e = yResp - mu;
-pFit = polyfit(xFunc(loc_o), yResp, 1);
+beta = mldivide([ones(N, 1), xFunc(ind_o)'], yResp(ind_o)');
+xObs = xFunc(ind_o);
+yObs = yResp(ind_o);
 
-D = xFunc(loc_o) - yResp;
-binEst = emp_variogram(D, sLine, N);
+yHat = [ones(N, 1), xObs']*beta;
+r = yObs' - yHat;
 
-
-
-
-
-
+Dobs = squareform(pdist([X(ind_o)', Y(ind_o)']));
+out = emp_variogram(Dobs, r, N);
 
