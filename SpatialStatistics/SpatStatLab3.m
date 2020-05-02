@@ -39,4 +39,6 @@ r = yObs' - yHat;
 
 Dobs = squareform(pdist([X(ind_o)', Y(ind_o)']));
 out = emp_variogram(Dobs, r, N);
+true = matern_variogram(D, 1, 1, 0.5, 1);
+
 
