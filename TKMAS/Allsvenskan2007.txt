@@ -1,0 +1,16 @@
+Lag:	      spelade   1       X       2   Mål:Gjorda    Mål:Insläppta diff   Poäng
+-------------------------------------------------------------------------------------
+IFK Göteborg 	26 	14 	7 	5 	45 	- 	23 	22 	49
+Kalmar FF 	26 	15 	3 	8 	43 	- 	32 	11 	48
+Djurgårdens IF 	26 	13 	7 	6 	39 	- 	24 	15 	46
+IF Elfsborg 	26 	10 	10 	6 	39 	- 	30 	9 	40
+AIK 		26 	10 	8 	8 	30 	- 	27 	3 	38
+Hammarby IF 	26 	11 	3 	12 	35 	- 	31 	4 	36
+Halmstads BK 	26 	9 	9 	8 	33 	- 	41 	-8 	36
+Helsingborgs IF 26 	9 	8 	9 	49 	- 	37 	12 	35
+Malmö FF 	26 	9 	7 	10 	29 	- 	28 	1 	34
+Gefle IF 	26 	9 	7 	10 	29 	- 	30 	-1 	34
+GAIS 		26 	7 	8 	11 	24 	- 	37 	-13 	29
+Örebro SK 	26 	6 	7 	13 	28 	- 	45 	-17 	25
+Trelleborgs FF 	26 	5 	8 	13 	22 	- 	38 	-16 	23
+Brommapojkarna 	26 	5 	8 	13 	21 	- 	43 	-22 	23

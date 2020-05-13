@@ -1,0 +1,12 @@
+disp('       ')
+disp('       ')
+disp('       ')
+disp('       ')
+disp('       ')
+
+disp('Main Program Version 1.3')
+disp('InitCommunication Version 1.3')
+disp('GelTelemetry Version 1.3') 
+disp('GearShift Version 1.3')
+disp('       ')
+disp('Finish time: 10.8335 seconds')

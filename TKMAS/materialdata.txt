@@ -1,0 +1,52 @@
+Material		Densitet [kg/m3]
+-----------------------------------------
+aluminium	2700
+bly	11340
+guld	19300
+järn	7860
+grafit	2220
+amorft kol	1900
+koppar	8918
+krom	7100
+magnesium	1734
+natrium	970
+platina	21450
+silver	10500
+tenn	7300
+zink	7140
+aluminiumbrons	8100
+konstantan	8900
+lagerbrons	8900
+monel	8900
+nysilver	8700
+rödgods	8700
+tennbrons	8800
+tryckmässing	8400
+tombak	8800
+duraluminium	2800
+silumin	2650
+gjutjärn	7300
+smidesjärn	7600
+stål	7820
+natursten	2700
+gnejs	2700
+granit	2700
+kalksten	2700
+marmor	2700
+sandsten	2700
+betong	2300
+lättklinkerbetong	1300
+murbruk, cementbruk	2000
+murbruk, kalkbruk	1700
+korkbetong	1300
+sågspånsbetong	1300
+cellglas	180
+gips	970
+korkplattor	140
+styrencellplast	20
+furu	520
+bok	700
+ek	700
+snö	100
+----------------------------------------
+källa: Mörtstedt och Hellsten, "Data och diagram", sjunde upplagan, Malmö 1999

@@ -1,0 +1,6 @@
+NATION	INV.	 G 	 S 	 B 
+Danmark	5639719	 43	 67	 69
+Finland	5470820	101	 84	117
+Island	 320060	  0	  2	  2
+Norge	5109056	 56	 49	 43
+Sverige	9875378	143	164	176

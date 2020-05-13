@@ -1,0 +1,12 @@
+%Kolumn 1 anger k1 i N/m
+%Kolumn 2 anger k2 i N/m
+13  11
+9    7
+15   7
+13  10
+8    7
+9   10
+13  13
+13   7
+10   7
+12  13

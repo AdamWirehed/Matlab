@@ -1,0 +1,244 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Kon2</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-12-03"><meta name="DC.source" content="Kon2.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Variables</a></li><li><a href="#3">Screw Test: M16</a></li><li><a href="#4">Stiffness Components</a></li><li><a href="#5">Stiffness Structure</a></li><li><a href="#6">Calculation Fk_in,Fs_ut and stress</a></li><li><a href="#7">Plot</a></li><li><a href="#8">F0_es</a></li><li><a href="#9">Mtot</a></li><li><a href="#10">Max Stress</a></li><li><a href="#11">Important Variables</a></li></ul></div><pre class="codeinput">clear <span class="string">all</span>
+close <span class="string">all</span>
+clc
+</pre><h2 id="2">Variables</h2><pre class="codeinput">p=10e6;
+Di=70e-3; Dy=76e-3; d=30e-3; l=250e-3; h=35e-3; b=8e-3;
+Es=210e9; Eal=70e9; Dyr=110e-3; Fn_ut=p*pi*(Di/2).^2; Fn_in=p*(pi*((Di/2).^2-(d/2).^2)); x_dist=5e-3;
+</pre><h2 id="3">Screw Test: M16</h2><pre class="codeinput">skruvdata=skruv(2); d1=skruvdata(1); d2=skruvdata(2); dw=skruvdata(3); ds=skruvdata(4)*10.^(-3); dh=skruvdata(5); P=skruvdata(6);
+Askruv=pi*(ds/2).^2;
+Dy_dist=Dy+2*ds+4*x_dist;
+Adist=pi/4*(Dy_dist.^2-Di.^2)-4*pi*(ds/2).^2;
+Acyl=pi/4*(Dy.^2-Di.^2);
+</pre><h2 id="4">Stiffness Components</h2><pre class="codeinput">Cscrew=Es*Askruv/(l+2*b+h);
+Ccyl=Es*Acyl/l;
+Cdist=Eal*Adist/h;
+</pre><h2 id="5">Stiffness Structure</h2><pre class="codeinput">Cs_ut=4*Cscrew;
+Ck_ut=(1/Ccyl+1/Cdist).^(-1);
+Cs_in=Cdist;
+Ck_in=(1/Ccyl+1/(4*Cscrew)).^(-1);
+C=[Cs_ut Ck_ut; Cs_in Ck_in];
+</pre><h2 id="6">Calculation Fk_in,Fs_ut and stress</h2><pre class="codeinput">F0_utus=Ck_ut/(Cs_ut+Ck_ut)*(Fn_ut); <span class="comment">%F?rsp?nning f?r att f?rhindra glapp, utan tryckspik</span>
+F0_inus=Ck_in/(Cs_in+Ck_in)*(Fn_in);
+F0_us=[F0_utus F0_inus];
+Fk_in=max(F0_us)-Ck_in/(Cs_in+Ck_in)*(Fn_in);
+Fs_ut=max(F0_us)+Cs_ut/(Cs_ut+Ck_ut)*(Fn_ut);
+dF_screw=Fs_ut-Fk_in;
+dFa=dF_screw/2;
+Asp=pi/16*(d1+d2).^2;
+sigma_a=dFa/(4*Asp);
+</pre><h2 id="7">Plot</h2><pre class="codeinput">delta_ut=max(F0_us)*(1/Cs_ut+1/Ck_ut);
+Cs_utpy=[0 Cs_ut*delta_ut];
+Cs_utpx=[0 delta_ut];
+Ck_utpy=[0 Ck_ut*delta_ut];
+Ck_utpx=[delta_ut 0];
+
+delta_in=max(F0_us)*(1/Cs_in+1/Ck_in);
+Cs_inpy=[0 Cs_in*delta_in];
+Cs_inpx=[0 delta_in];
+Ck_inpy=[0 Ck_in*delta_in];
+Ck_inpx=[delta_in 0];
+
+figure;
+ut=subplot(2,1,1);
+plot(ut,Cs_utpx,Cs_utpy);
+hold <span class="string">on</span>
+plot(ut,Ck_utpx,Ck_utpy);
+
+in=subplot(2,1,2);
+plot(in,Cs_inpx,Cs_inpy);
+hold <span class="string">on</span>
+plot(in,Ck_inpx,Ck_inpy);
+</pre><img vspace="5" hspace="5" src="Kon2_01.png" alt=""> <h2 id="8">F0_es</h2><pre class="codeinput">F0_ut=Ck_ut/(Cs_ut+Ck_ut)*(Fn_ut*1.25); <span class="comment">%F?rsp?nning f?r att f?rhindra glapp</span>
+F0_in=Ck_in/(Cs_in+Ck_in)*(Fn_in*1.25); <span class="comment">%Multiplicera med 1.25 f?r tryckspik</span>
+F0_ms=[F0_in F0_ut];
+
+delta_pl=31e-6; <span class="comment">%Framtaget genom diagram</span>
+F0_utes=F0_ut+delta_pl*(Cs_ut*Ck_ut/(Cs_ut+Ck_ut)); <span class="comment">%L?gger till deltaF0 f?r s?ttning</span>
+F0_ines=F0_in+delta_pl*(Cs_in*Ck_in/(Cs_in+Ck_in));
+F0_es=[F0_ines F0_utes];
+F0_delta=max(F0_ms)-max(F0_es);
+</pre><h2 id="9">Mtot</h2><pre class="codeinput">my_max=0.26; myb_max=0.18;
+my_min=0.14; myb_min=0.08;
+rm=(dh+dw)/4;
+Mtot_max=max(F0_es)*(0.16*P+0.58*my_max*d2+myb_max*rm);
+F0_wc=Mtot_max/(0.16*P+0.58*my_min*d2+myb_min*rm); <span class="comment">%Ber?knar en f?rsp?nning f?r "worst case scenario" f?r skruvarna.</span>
+</pre><h2 id="10">Max Stress</h2><pre class="codeinput">Fs_utes=F0_wc+Cs_ut/(Cs_ut+Ck_ut)*(Fn_ut*1.25); <span class="comment">%Multiplicerar med 1.25 f?r tryckspik</span>
+sigma_max=Fs_utes/(4*Asp); <span class="comment">%Fs_ut ?r den st?sta kraften som verkar i skruven, Fs_in belastar distansringen, och avlastar skruven</span>
+</pre><h2 id="11">Important Variables</h2><pre class="codeinput">fprintf(<span class="string">'Mtot:%2.2d \nF0_wc:%2.2d \nsigma_a:%2.2d \nsigma_max:%2.2d \n'</span>,Mtot_max,F0_wc,sigma_a,sigma_max);
+sigma_b=800e6; sigma_s=640e6; sigma_atill=50e6; <span class="comment">%Enligt h?llfasthetsbeteckning 8.8</span>
+<span class="keyword">if</span> sigma_max &lt; sigma_s &amp;&amp; sigma_a &lt; sigma_atill
+    fprintf(<span class="string">'\nSkruven M%2.0d klarar kraven enligt 8.8\n.'</span>,skruvdata(4));
+<span class="keyword">else</span>
+    fprintf(<span class="string">'Skruven M%2.0d klarar inte kraven enligt 8.8. Byt skruv.\n'</span>,skruvdata(4));
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">Mtot:9.22e+01 
+F0_wc:7.73e+04 
+sigma_a:2.70e+07 
+sigma_max:5.79e+08 
+
+Skruven M 8 klarar kraven enligt 8.8
+.</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clear all
+close all
+clc
+
+%% Variables
+p=10e6;
+Di=70e-3; Dy=76e-3; d=30e-3; l=250e-3; h=35e-3; b=8e-3;
+Es=210e9; Eal=70e9; Dyr=110e-3; Fn_ut=p*pi*(Di/2).^2; Fn_in=p*(pi*((Di/2).^2-(d/2).^2)); x_dist=5e-3;
+
+%% Screw Test: M16
+skruvdata=skruv(2); d1=skruvdata(1); d2=skruvdata(2); dw=skruvdata(3); ds=skruvdata(4)*10.^(-3); dh=skruvdata(5); P=skruvdata(6); 
+Askruv=pi*(ds/2).^2;
+Dy_dist=Dy+2*ds+4*x_dist;
+Adist=pi/4*(Dy_dist.^2-Di.^2)-4*pi*(ds/2).^2;
+Acyl=pi/4*(Dy.^2-Di.^2);
+
+%% Stiffness Components
+Cscrew=Es*Askruv/(l+2*b+h);
+Ccyl=Es*Acyl/l;
+Cdist=Eal*Adist/h;
+
+%% Stiffness Structure
+Cs_ut=4*Cscrew;
+Ck_ut=(1/Ccyl+1/Cdist).^(-1);
+Cs_in=Cdist;
+Ck_in=(1/Ccyl+1/(4*Cscrew)).^(-1);
+C=[Cs_ut Ck_ut; Cs_in Ck_in];
+
+%% Calculation Fk_in,Fs_ut and stress
+F0_utus=Ck_ut/(Cs_ut+Ck_ut)*(Fn_ut); %F?rsp?nning f?r att f?rhindra glapp, utan tryckspik
+F0_inus=Ck_in/(Cs_in+Ck_in)*(Fn_in);
+F0_us=[F0_utus F0_inus];
+Fk_in=max(F0_us)-Ck_in/(Cs_in+Ck_in)*(Fn_in); 
+Fs_ut=max(F0_us)+Cs_ut/(Cs_ut+Ck_ut)*(Fn_ut);
+dF_screw=Fs_ut-Fk_in;
+dFa=dF_screw/2;
+Asp=pi/16*(d1+d2).^2;
+sigma_a=dFa/(4*Asp);
+
+%% Plot
+delta_ut=max(F0_us)*(1/Cs_ut+1/Ck_ut);
+Cs_utpy=[0 Cs_ut*delta_ut];
+Cs_utpx=[0 delta_ut];
+Ck_utpy=[0 Ck_ut*delta_ut];
+Ck_utpx=[delta_ut 0];
+
+delta_in=max(F0_us)*(1/Cs_in+1/Ck_in);
+Cs_inpy=[0 Cs_in*delta_in];
+Cs_inpx=[0 delta_in];
+Ck_inpy=[0 Ck_in*delta_in];
+Ck_inpx=[delta_in 0];
+
+figure;
+ut=subplot(2,1,1);
+plot(ut,Cs_utpx,Cs_utpy);
+hold on
+plot(ut,Ck_utpx,Ck_utpy);
+
+in=subplot(2,1,2);
+plot(in,Cs_inpx,Cs_inpy);
+hold on
+plot(in,Ck_inpx,Ck_inpy);
+
+%% F0_es
+F0_ut=Ck_ut/(Cs_ut+Ck_ut)*(Fn_ut*1.25); %F?rsp?nning f?r att f?rhindra glapp
+F0_in=Ck_in/(Cs_in+Ck_in)*(Fn_in*1.25); %Multiplicera med 1.25 f?r tryckspik
+F0_ms=[F0_in F0_ut];
+
+delta_pl=31e-6; %Framtaget genom diagram
+F0_utes=F0_ut+delta_pl*(Cs_ut*Ck_ut/(Cs_ut+Ck_ut)); %L?gger till deltaF0 f?r s?ttning
+F0_ines=F0_in+delta_pl*(Cs_in*Ck_in/(Cs_in+Ck_in));
+F0_es=[F0_ines F0_utes];
+F0_delta=max(F0_ms)-max(F0_es);
+
+%% Mtot
+my_max=0.26; myb_max=0.18;
+my_min=0.14; myb_min=0.08;
+rm=(dh+dw)/4;
+Mtot_max=max(F0_es)*(0.16*P+0.58*my_max*d2+myb_max*rm);
+F0_wc=Mtot_max/(0.16*P+0.58*my_min*d2+myb_min*rm); %Ber?knar en f?rsp?nning f?r "worst case scenario" f?r skruvarna.
+
+%% Max Stress
+Fs_utes=F0_wc+Cs_ut/(Cs_ut+Ck_ut)*(Fn_ut*1.25); %Multiplicerar med 1.25 f?r tryckspik 
+sigma_max=Fs_utes/(4*Asp); %Fs_ut ?r den st?sta kraften som verkar i skruven, Fs_in belastar distansringen, och avlastar skruven
+
+%% Important Variables
+fprintf('Mtot:%2.2d \nF0_wc:%2.2d \nsigma_a:%2.2d \nsigma_max:%2.2d \n',Mtot_max,F0_wc,sigma_a,sigma_max);
+sigma_b=800e6; sigma_s=640e6; sigma_atill=50e6; %Enligt h?llfasthetsbeteckning 8.8
+if sigma_max < sigma_s && sigma_a < sigma_atill
+    fprintf('\nSkruven M%2.0d klarar kraven enligt 8.8\n.',skruvdata(4));
+else
+    fprintf('Skruven M%2.0d klarar inte kraven enligt 8.8. Byt skruv.\n',skruvdata(4));
+end
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,3 @@
+person=struct('name'{Anders T. Johansson', 'Prins C P Bernadotte',...
+                'age',{33,37}, 'title',{'Dr', 'HKH'});
+            %Observera att cellmatriser alltså används för att göra struct

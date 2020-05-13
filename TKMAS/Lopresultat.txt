@@ -1,0 +1,13 @@
+% kolumn 1 anger löparens nummer
+% kolumn 2 anger sträcka i millifurlong
+% kolumn 3 anger tid i mikrofortnight
+1        2600          70
+2        1400         110
+3        1400         110
+4        1600         100
+5        2400          80
+6        1400         130
+7        2000         130
+8        2600         140
+9        2800         110
+10       2600         120

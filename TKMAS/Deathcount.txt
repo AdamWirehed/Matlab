@@ -1,0 +1,372 @@
+1
+150
+Ogami Itto (Lone Wolf and Cub: White Heaven in Hell)
+1974
+2
+141
+Smith (Shoot 'Em Up)
+2007
+3
+118
+John Preston (Equilibrium)
+2002
+4
+103
+Topper Harley (Hot Shots! Part Deux)
+1993
+5
+96
+Tetsuo (Akira)
+1988
+6
+87
+Rambo (Rambo)
+2008
+7
+81
+John Matrix (Commando)
+1985
+8
+78
+Ken (A Better Tomorrow II)
+1987
+9
+77
+Blade (II)
+2002
+9
+77
+Tequila (Hard Boiled)
+1992
+11
+76
+The Bride (Kill Bill: Vol. 1)
+2003
+12
+73
+"Leftenant" Schaffer (Where Eagles Dare)
+1968
+13
+72
+Rambo (Rambo III)
+1988
+14
+69
+Ah Jong (The Killer)
+1989
+15
+67
+Riddick (Chronicles of Riddick)
+2004
+16
+65
+Blade (I)
+1998
+17
+60
+Luke (Bullet in the Head) 
+1990
+18
+59
+Cor. Braddock (Missing in Action)
+1984
+19
+58
+Inspector Li (The Killer)
+1989
+20
+56
+Robert Neville (I Am Legend)
+2007
+21
+55
+Josey Wales (The Outlaw Josey Wales)
+1976
+22
+54
+Frank Castle (The Punisher) 
+1989
+23
+54
+Miyamoto (Ritana)
+2002
+24
+53
+Agent 47 (Hitman)
+2007
+24
+53
+El Mariachi (Desperado)
+1995
+26
+52
+Alan/Tony (Hard Boiled)
+1992
+26
+52
+El Wray (Grindhouse: Planet Terror) 
+2007
+28
+51
+Warchild (Bridge of Dragons)
+1999
+28
+51
+Harry Tasker (True Lies)
+1994
+28
+51
+Rambo (First Blood Part II) 
+1985
+31
+50
+Cherry Darling (Grindhouse: Planet Terror) 
+2007
+31
+50
+Ramon (A Fistful of Dollars) 
+1964
+33
+47
+Peter (Dawn of the Dead) 
+1978
+34
+46
+Chuck Barris (Confessions of a Dangerous Mind)
+2002
+35
+45
+'Rick' O'Connell (The Mummy)
+1999
+36
+44
+Douglas Quaid (Total Recall) 
+1990
+36
+44 
+Ho (A Better Tomorrow II) 
+1987
+38
+42
+Mathayus (Scorpion King) 
+2002
+38
+42
+Rogue (War)
+2007
+40
+41
+Cpt. Nathan Algren (The Last Samurai)
+2003
+41
+40
+Paul (Bullet in the Head) 
+1990
+41
+40
+Balian (Kingdom of Heaven)
+2005
+43
+39
+El Mariachi (Once Upon a Time in Mexico)
+2003
+43
+39
+Carlos Olivera (Resident Evil: Extinction)
+2007
+45
+38
+Joe (Bangkok Dangerous) 
+2008
+45
+38
+The Joker (Batman) 
+1989
+45
+38
+Pike Bishop (The Wild Bunch) 
+1969
+45
+38
+Nikolai Rachenko (Red Scorpion) 
+1989
+49
+37
+Ash (Army of Darkness)
+1993
+49
+37
+Seth Gecko (From Dusk Till Dawn)
+1996
+51
+36
+Erickson (Sweepers) 
+1998
+52
+35
+Achilles (Troy) 
+2004
+53
+34
+Casey Ryback (Under Siege) 
+1992
+54
+33
+Lung (A Better Tomorrow II) 
+1987
+54
+33
+Joe Armstrong (American Ninja) 
+1985
+54
+33
+Capt. Victor Kirk (House of the Dead)
+2003
+54
+33
+Melvin (The Big Hit) 
+1998
+54
+33
+Roger (Dawn of the Dead) 
+1978
+54
+33
+William Wallace (Braveheart) 
+1995
+60
+32
+Charly (The Long Kiss Goodnight)
+1996
+60
+32
+Bryan (Taken)
+2008
+60
+32
+Iron Man
+2008
+63
+31
+Gabriel (Swordfish) 
+2001
+64
+30
+Blade (Blade: Trinity) 
+2004
+64
+30
+Leonidas (300)
+2007
+64
+30
+Matt Hunter (Invasion U.S.A.) 
+1985
+64
+30
+James Bond (GoldenEye)
+1995
+64
+30
+V (V for Vendetta) 
+2006
+64
+30
+Prisoner KSC2-303/Samurai 1 Reborn (Versus)
+2000
+64
+30
+Samurai 2 (Versus)
+2000
+71
+29
+Eric Dravin (The Crow) 
+1994
+71
+29
+John 'The Eraser' Kruger 
+1996
+73
+27
+Joe (Once a Thief)
+1991
+73
+27
+Shaun (Shaun of the Dead)
+2004
+73
+27
+Sgt. Kenner (Showdown In Little Tokyo)
+1991
+73
+27
+Lyle Gorch (The Wild Bunch) 
+1969
+77
+26
+Jim (Once a Thief) 
+1991
+77
+26
+Katsumoto (The Last Samurai)
+2003
+77
+26
+Korbin Dallas (Fifth Element) 
+1997
+77
+26
+Maxamus (Gladiator)
+2000
+77
+26
+Leon (Leon) 
+1994
+77
+26
+Legolas (LotR: Two Towers)
+2005
+77
+26
+Ethan Hunt (Mission Impossible 2)
+2002
+77
+26
+Mark Kaminsky (Raw Deal)
+1986
+77
+26
+Major Smith (Where Eagles Dare)
+1968
+77
+26
+Tony Montana (Scarfance)
+1983
+87
+25
+Astinos (300)
+2007
+87
+25
+Alice (Resident Evil: Extinction)
+2007
+87
+25
+Casey Ryback (Under Siege 2) 
+1995
+87
+25
+Major Dutch (Predator) 
+1987
+87
+25
+Phoenix (X-Men III) 
+2006
+87
+25
+Ujio (The Last Samurai)
+2003
+93
+24
+Anakin/Darth Vader (Star Wars III)
+2005
